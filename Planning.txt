@@ -1,0 +1,39 @@
+1.	APIs:
+
+	GET requests:
+		http://localhost:8080/invcaptureapp/
+		http://localhost:8080/invcaptureapp/vendors
+		http://localhost:8080/invcaptureapp/payments
+		http://localhost:8080/invcaptureapp/purchaseorders
+		http://localhost:8080/invcaptureapp/vendorinvoicecapture
+		http://localhost:8080/invcaptureapp/vendorinvoice/apagingreport
+
+
+ All requests and responses are in XML format
+
+2. Create a web server using Node.JS
+
+	URL paths:
+
+	GET requests:
+		/vendors
+		/purchaseorders
+		/purchaseorders/invoicesmatched/<poNumber>
+		/payments
+		/vendorinvcapture
+		/vendorinvoice/apagingreport/<invoiceNumber>
+		/payments/paymenthistory-detailed/<vendorId>
+		/payments/paymenthistory-summary/<vendorId>
+		/payments/paymenthistory/<paymentReference>
+		/vendorinvoicecapture/<vendorId>
+
+		POST request:
+		/vendors
+		/purchaseorders
+		/payments
+		/vendorinvcapture
+
+		All request and responses are in JSON format
+
+
+
