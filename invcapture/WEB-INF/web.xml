@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<web-app>
+	<display-name>ERP Invois Evalv</display-name>
+	<description>invoicecapture</description>
+	<servlet>
+		<servlet-name>Vendor Masterlist</servlet-name>
+		<servlet-class>VendorDatabaseServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Vendor Masterlist</servlet-name>
+		<url-pattern>/vendors</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name></servlet-name>
+		<servlet-class></servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name></servlet-name>
+		<url-pattern></url-pattern>
+	</servlet-mapping>
+</web-app>

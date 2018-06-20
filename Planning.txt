@@ -1,12 +1,12 @@
 1.	APIs:
 
 	GET requests:
-		http://localhost:8080/invcaptureapp/
-		http://localhost:8080/invcaptureapp/vendors
-		http://localhost:8080/invcaptureapp/payments
-		http://localhost:8080/invcaptureapp/purchaseorders
-		http://localhost:8080/invcaptureapp/vendorinvoicecapture
-		http://localhost:8080/invcaptureapp/vendorinvoice/apagingreport
+		http://localhost:8080/invcapture/
+		http://localhost:8080/invcapture/vendors
+		http://localhost:8080/invcapture/payments
+		http://localhost:8080/invcapture/purchaseorders
+		http://localhost:8080/invcapture/vendorinvoicecapture
+		http://localhost:8080/invcapture/vendorinvoice/apagingreport
 
 
  All requests and responses are in XML format
