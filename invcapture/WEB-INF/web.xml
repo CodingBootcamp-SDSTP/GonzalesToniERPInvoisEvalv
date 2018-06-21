@@ -3,19 +3,50 @@
 	<display-name>ERP Invois Evalv</display-name>
 	<description>invoicecapture</description>
 	<servlet>
+		<servlet-name>User Database</servlet-name>
+		<servlet-class>UserDatabaseServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>User Database</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>Vendor Masterlist</servlet-name>
-		<servlet-class>VendorDatabaseServlet</servlet-class>
+		<servlet-class>VendorMasterListServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Vendor Masterlist</servlet-name>
 		<url-pattern>/vendors</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name></servlet-name>
-		<servlet-class></servlet-class>
+		<servlet-name>Payment History</servlet-name>
+		<servlet-class>PaymentHistoryServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name></servlet-name>
-		<url-pattern></url-pattern>
+		<servlet-name>Payment History</servlet-name>
+		<url-pattern>/payments</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>All Purchase Orders</servlet-name>
+		<servlet-class>AllPurchaseOrdersServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>All Purchase Order</servlet-name>
+		<url-pattern>/purchaseorders</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>Vendor Invoices</servlet-name>
+		<servlet-class>VendorInvoicesServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Vendor Invoices</servlet-name>
+		<url-pattern>/vendorinvoicecapture</url-pattern>
+	</servlet-mapping>
+			<servlet-name>AP Aging Report</servlet-name>
+		<servlet-class>ApAgingReportServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Vendor Invoices</servlet-name>
+		<url-pattern>/apagingreport</url-pattern>
 	</servlet-mapping>
 </web-app>

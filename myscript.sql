@@ -32,6 +32,7 @@ CREATE TABLE vendors (
 INSERT INTO vendors (vendorId, subsidiary, vendorName, vendorAddress, taxidssn, paymentType, currency, terms, taxable) VALUES (10001, "us", "Atlassians", "San San Francisco, CA 94103", "20-3345959", "ach", "usd", "N30", "Yes");
 INSERT INTO vendors (vendorId, subsidiary, vendorName, vendorAddress, taxidssn, paymentType, currency, terms, taxable) VALUES (10002, "us", "Deltek Inc.", "509 Olive Way Seattle, WA 98101", "20-3365454", "ach", "usd", "N15", "Yes");
 INSERT INTO vendors (vendorId, subsidiary, vendorName, vendorAddress, taxidssn, paymentType, currency, terms, taxable) VALUES (10003, "us", "Dell Inc.", "Round Rock, Texas‎, USA", "20-3376464", "wire", "usd", "N45", "Yes");
+INSERT INTO vendors (vendorId, subsidiary, vendorName, vendorAddress, taxidssn, paymentType, currency, terms, taxable) VALUES (10004, "us", "Verizon Wireless", "Round Rock, Texas‎, USA", "20-3376464", "wire", "usd", "N30", "Yes");
 
 CREATE TABLE payments (
 	vendorId INTEGER(5) NOT NULL,
@@ -53,6 +54,7 @@ INSERT INTO payments (vendorId, paymentReference, paymentStatus, beneficiary, ba
 INSERT INTO payments (vendorId, paymentReference, paymentStatus, beneficiary, bankName, accountNumber, accountType, swiftCode, bankAddressNumber, remittanceAdd) VALUES (10002, 10000003, "paid", "Deltek Inc.", "bank of america", 265262, "savings acct", "BOFAUS3N", 26526288, "Ny 10038, United States Of America");
 INSERT INTO payments (vendorId, paymentReference, paymentStatus, beneficiary, bankName, accountNumber, accountType, swiftCode, bankAddressNumber, remittanceAdd) VALUES (10003, 10000004, "paid", "Dell Inc.", "bank of america", 267563, "savings acct", "BOFAUS3N", 26526288, "Ny 10038, United States Of America");
 INSERT INTO payments (vendorId, paymentReference, paymentStatus, beneficiary, bankName, accountNumber, accountType, swiftCode, bankAddressNumber, remittanceAdd) VALUES (10003, 10000005, "unpaid", "Dell Inc.", "bank of america", 267563, "savings acct", "BOFAUS3N", 26526288, "Ny 10038, United States Of America");
+INSERT INTO payments (vendorId, paymentReference, paymentStatus, beneficiary, bankName, accountNumber, accountType, swiftCode, bankAddressNumber, remittanceAdd) VALUES (10004, 10000006, "unpaid", "Verizon", "bank of america", 268489, "savings acct", "BOFAUS3N", 26848987, "Ny 10038, United States Of America");
 
 CREATE TABLE purchaseorders (
 	vendorId INTEGER(5) NOT NULL,
@@ -69,6 +71,10 @@ CREATE TABLE purchaseorders (
 	FOREIGN KEY(vendorId) REFERENCES vendors(vendorId)
 	-- FOREIGN KEY(invoiceNumber)REFERENCES vendorInvCapture(invoiceNumber)
 );
+
+INSERT INTO purchaseorders (vendorId, poNumber, invoiceNumber, account, requestor, department, location, poAmount, billTo, shipTo) VALUES (10001, 80000001, "Inv0001", "payable", "toni gonzales", "it", "us", "1000000", "Netsuite Inc.", "San Mateo US");
+INSERT INTO purchaseorders (vendorId, poNumber, invoiceNumber, account, requestor, department, location, poAmount, billTo, shipTo) VALUES (10003, 80000002, "Inv0002", "payable", "imee mitra", "finance", "us", "200000", "Netsuite Inc.", "San Mateo US");
+INSERT INTO purchaseorders (vendorId, poNumber, invoiceNumber, account, requestor, department, location, poAmount, billTo, shipTo) VALUES (10002, 80000003, "Inv0003", "payable", "janice nacpil", "hr", "us", "900000", "Netsuite Inc.", "San Mateo US");
 
 CREATE TABLE vendorInvCapture (
 	invoiceNumber VARCHAR(25) NOT NULL,
@@ -95,3 +101,5 @@ CREATE TABLE vendorInvCapture (
 	FOREIGN KEY(vendorId) REFERENCES vendors(vendorId),
 	FOREIGN KEY(paymentReference) REFERENCES payments(paymentReference)
 );
+
+-- INSERT INTO vendorInvCapture (invoiceNumber, poNumber, vendorId, invoiceDate, description, currency, invAmount, tax, invAmtDue, dueDate, terms, billTo, shipTo, paymentStatus, paymentReference, paymentType, paymentDate, amountPaid) VALUES (V0001, null, 1004, "06/18/2018", "toni gonzales", "it", "us", "1000000", "Netsuite Inc.", "San Mateo US");
